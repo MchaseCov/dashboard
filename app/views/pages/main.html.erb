@@ -2,4 +2,7 @@
   <h1 class="font-bold text-4xl">Pages#main</h1>
   <p autofocus>Find me in app/views/pages/main.html.erb</p>
   <iframe src="  chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html#profile-id:253b" frameborder="0" width="1200px" height="600px"></iframe>
+  <%@repos.each do |repo|%>
+    <%=repo.name%>
+  <% end %>
 </div>
