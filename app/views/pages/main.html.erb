@@ -1,7 +1,10 @@
-<main class="container mx-auto mt-12 px-5 flex flex-col gap-8 font-open-sans">
+<main class="w-[80%] mx-auto mt-12 px-5 flex flex-col gap-8 font-open-sans">
   <section class="flex w-full justify-between">
     <div>
-      <h2 class="font-medium text-xl font-jetbrains">VM terminal:</h2>
+      <div class="flex justify-between w-full">
+        <h2 class="font-medium text-xl font-jetbrains w-max">VM terminal:</h2>
+        <%= link_to "Bash Cheat Sheet", 'https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh', class:"text-center underline decoration-cyan-400 decoration-2 inline", target:"_blank"%>
+      </div>
       <iframe src="chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html#profile-id:253b" frameborder="0" width="1200px" height="600px" class="rounded-xl"></iframe>
     </div>
     <div>
@@ -9,14 +12,21 @@
     </div>
   </section>
   <section class="flex w-full justify-between">
-    <div>
+    <section class="min-w-[66%]">
       <h2 class="font-medium text-xl font-jetbrains">Documentation & Handbooks:</h2>
-    </div>
+      <%=render 'resources'%>
+    </section>
     <section class="flex flex-col gap-3">
-      <h2 class="font-medium text-xl font-jetbrains">Recently pushed repos:</h2>
+      <div class="-mt-[24px] flex justify-between items-end">
+        <h2 class="font-medium text-xl font-jetbrains">
+          Recently pushed repos:</h2>
+        <%= link_to 'https://github.com/MchaseCov/', target:"_blank" do %>
+          <i class="devicon-github-original text-5xl text-black hover:text-cyan-400"></i>
+        <% end %>
+      </div>
       <div class="grid grid-cols-2 gap-2">
         <%@repos.each do |repo|%>
-          <%= link_to repo.html_url, target:"blank", class:"w-32 bg-stone-300 w-max flex flex-col flex-wrap p-2" do %>
+          <%= link_to repo.html_url, target:"_blank", class:"w-32 bg-stone-300 w-max flex flex-col flex-wrap p-2" do %>
             <p><%=repo.name.titlecase%></p>
             <p>Last push: <%=repo.pushed_at.strftime("%B %e, %Y")%></p>
             <p>Created: <%=repo.created_at.strftime("%B %e, %Y")%></p>
