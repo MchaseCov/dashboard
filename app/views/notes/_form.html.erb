@@ -1,4 +1,6 @@
-<%= form_with model: note, class:"sticky-note bg-yellow-100 w-64 h-64 flex flex-col break-words p-1.5" do |form| %>
+<%= form_with model: note, class:"sticky-note bg-yellow-100 w-64 h-64 flex flex-col break-words p-1.5",
+data: { controller: "reset-form", id: "new-note-form",
+action: "turbo:submit-end->reset-form#reset" } do |form| %>
   <%= form.label :header, class:"font-jetbrains text-xl font-semibold"%>
   <%= form.text_field :header, class:"bg-yellow-100 border-dashed resize-none" %>
   <%= form.label :body, class:"font-jetbrains text-xl font-semibold"%>
