@@ -1,0 +1,19 @@
+<%= form_with model: note, class:"sticky-note bg-yellow-100 w-64 h-64 flex flex-col break-words p-1.5" do |form| %>
+  <%= form.label :header, class:"font-jetbrains text-xl font-semibold"%>
+  <%= form.text_field :header, class:"bg-yellow-100 border-dashed resize-none" %>
+  <%= form.label :body, class:"font-jetbrains text-xl font-semibold"%>
+  <%= form.text_area :body, class:"bg-yellow-100 border-dashed resize-none" %>
+  <div>
+    <%= form.submit class:"font-jetbrains text-xl font-semibold hover:text-cyan-400 hover:cursor-pointer"%>
+  </div>
+<% end %>
+<% if note.errors.any? %>
+  <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+    <ul>
+      <% note.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -11,6 +11,7 @@
       <h2 class="font-medium text-xl font-jetbrains">Upcoming & Todo:</h2>
     </div>
   </section>
+  <hr>
   <section class="flex w-full justify-between">
     <section class="min-w-[66%]">
       <h2 class="font-medium text-xl font-jetbrains">Documentation & Handbooks:</h2>
@@ -19,14 +20,15 @@
     <section class="flex flex-col gap-3">
       <div class="-mt-[24px] flex justify-between items-end">
         <h2 class="font-medium text-xl font-jetbrains">
-          Recently pushed repos:</h2>
+          Recently pushed repos:
+        </h2>
         <%= link_to 'https://github.com/MchaseCov/', target:"_blank" do %>
           <i class="devicon-github-original text-5xl text-black hover:text-cyan-400"></i>
         <% end %>
       </div>
       <div class="grid grid-cols-2 gap-2">
         <%@repos.each do |repo|%>
-          <%= link_to repo.html_url, target:"_blank", class:"w-32 bg-stone-300 w-max flex flex-col flex-wrap p-2" do %>
+          <%= link_to repo.html_url, target:"_blank", class:"bg-stone-300 w-max flex flex-col flex-wrap p-2" do %>
             <p><%=repo.name.titlecase%></p>
             <p>Last push: <%=repo.pushed_at.strftime("%B %e, %Y")%></p>
             <p>Created: <%=repo.created_at.strftime("%B %e, %Y")%></p>
@@ -35,5 +37,10 @@
         <% end %>
       </div>
     </section>
+  </section>
+  <hr>
+  <section>
+    <h2 class="font-medium text-xl font-jetbrains">Quick notes:</h2>
+    <%= turbo_frame_tag id="notes", src: notes_path, class:"flex gap-8 flex-wrap container mx-auto" %>
   </section>
 </main>

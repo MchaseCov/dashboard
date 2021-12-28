@@ -1,0 +1,4 @@
+<%= turbo_frame_tag id="notes" do %>
+  <%= turbo_frame_tag id="new_note", src: new_note_path %>
+  <%= render @notes %>
+<% end %>

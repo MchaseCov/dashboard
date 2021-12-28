@@ -1,0 +1,7 @@
+<div id="<%= dom_id note %>" class="sticky-note bg-yellow-100 w-64 h-64 flex flex-col break-words p-1.5">
+  <h2 class="font-jetbrains text-xl font-semibold"><%= note.header.titleize%></h2>
+  <p class="text-ellipsis overflow-hidden "><%= note.body %></pd>
+  <div class='mt-auto'>
+    <%= button_to 'Destroy this note', note_path(note), method: :delete %>
+  </div>
+</div>

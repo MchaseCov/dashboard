@@ -11,3 +11,9 @@
 }
 
 */
+#notes .sticky-note {
+  transform: rotate(-3deg);
+}
+#notes .sticky-note:nth-child(even) {
+  transform: rotate(4deg);
+}
