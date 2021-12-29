@@ -3,12 +3,15 @@
     <div>
       <div class="flex justify-between w-full">
         <h2 class="font-medium text-xl font-jetbrains w-max">VM terminal:</h2>
+        <%= link_to  "From Host", terminal_local_to_vm_path, 'data-turbo-frame': 'bash-terminal' %>
+        <%= link_to  "From Local", terminal_local_to_local_path, 'data-turbo-frame': 'bash-terminal'  %>
+        <%= link_to  "From Remote", terminal_remote_to_local_path, 'data-turbo-frame': 'bash-terminal' %>
         <%= link_to "Bash Cheat Sheet", 'https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh', class:"text-center underline decoration-cyan-400 decoration-2 inline", target:"_blank"%>
       </div>
-      <iframe src="chrome-extension://iodihamcpbpeioajjeobimgagajmlibd/html/nassh.html#profile-id:253b" frameborder="0" width="1200px" height="600px" class="rounded-xl"></iframe>
+      <%= turbo_frame_tag id="bash-terminal", src: terminal_local_to_vm_path %>
     </div>
     <div>
-      <h2 class="font-medium text-xl font-jetbrains">Upcoming & Todo:</h2>
+      <h2 class="font-medium text-xl font-jetbrains">Calandar or Gmail or something:</h2>
     </div>
   </section>
   <hr>
