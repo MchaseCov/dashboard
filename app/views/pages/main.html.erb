@@ -12,7 +12,11 @@
     </div>
     <div class="grow">
       <h2 class="font-medium text-xl font-jetbrains">Working notes:</h2>
-      <%= turbo_frame_tag id="notepads", src: notepads_path %>
+      <% if @recent_notepad %>
+        <%= turbo_frame_tag id="notepads", src: @recent_notepad %>
+      <% else %>
+        <%= turbo_frame_tag id="notepads", src: notepads_path %>
+      <% end %>
     </div>
   </section>
   <hr>
