@@ -6,7 +6,7 @@
         <%= link_to  "From Host", terminal_local_to_vm_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
         <%= link_to  "From Local", terminal_local_to_local_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline"  %>
         <%= link_to  "From Remote", terminal_remote_to_local_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
-        <%= link_to "Bash Cheat Sheet", pages_bash_commands_path, 'data-turbo-frame': 'notepads', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline mr-1"%>
+        <%= link_to "Bash Cheat Sheet", 'https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh', 'data-turbo-frame': 'notepads', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline mr-1", target:"_blank"%>
       </div>
       <%= turbo_frame_tag id="bash-terminal", src: terminal_local_to_vm_path %>
     </div>
