@@ -30,14 +30,6 @@
         <% end %>
       </div>
       <div class="grid grid-cols-2 gap-2">
-        <%@repos.each do |repo|%>
-          <%= link_to repo.html_url, target:"_blank", class:"bg-stone-300 w-max flex flex-col flex-wrap p-2" do %>
-            <p><%=repo.name.titlecase%></p>
-            <p>Last push: <%=repo.pushed_at.strftime("%B %e, %Y")%></p>
-            <p>Created: <%=repo.created_at.strftime("%B %e, %Y")%></p>
-            <p>Open issues: <%=repo.open_issues_count%></p>
-          <% end %>
-        <% end %>
       </div>
     </section>
   </section>
