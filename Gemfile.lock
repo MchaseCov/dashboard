@@ -105,6 +105,7 @@ GEM
       thor (>= 0.14.0, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    hotwire_scaffold_generator (1.0.1)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.0.1)
@@ -224,6 +225,7 @@ DEPENDENCIES
   capybara
   debug
   figaro
+  hotwire_scaffold_generator (~> 1.0, >= 1.0.1)
   importmap-rails
   jbuilder
   octokit (~> 4.0)

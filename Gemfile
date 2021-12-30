@@ -76,3 +76,5 @@ end
 
 gem 'figaro'
 gem 'octokit', '~> 4.0'
+
+gem 'hotwire_scaffold_generator', '~> 1.0', '>= 1.0.1'
