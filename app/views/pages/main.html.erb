@@ -6,17 +6,13 @@
         <%= link_to  "From Host", terminal_local_to_vm_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
         <%= link_to  "From Local", terminal_local_to_local_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline"  %>
         <%= link_to  "From Remote", terminal_remote_to_local_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
-        <%= link_to "Bash Cheat Sheet", 'https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline mr-1", target:"_blank"%>
+        <%= link_to "Bash Cheat Sheet", pages_bash_commands_path, 'data-turbo-frame': 'notepads', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline mr-1"%>
       </div>
       <%= turbo_frame_tag id="bash-terminal", src: terminal_local_to_vm_path %>
     </div>
     <div class="grow">
       <h2 class="font-medium text-xl font-jetbrains">Working notes:</h2>
-      <% if @recent_notepad %>
-        <%= turbo_frame_tag id="notepads", src: @recent_notepad %>
-      <% else %>
-        <%= turbo_frame_tag id="notepads", src: notepads_path %>
-      <% end %>
+      <%= turbo_frame_tag id="notepads", src: (@recent_notepad.present? ? @recent_notepad : notepads_path), class:"overflow-auto" %>
     </div>
   </section>
   <hr>
