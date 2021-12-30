@@ -2,7 +2,7 @@
   <div class="flex flex-col w-full h-full gap-y-3">
     <strong><%= notepad.title %></strong>
     <p>
-      <%= notepad.body %>
+      <%= simple_format(notepad.body) %>
     </p>
     <div class="flex w-full">
       <%= link_to "Edit this notepad", edit_notepad_path(notepad), class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %> |
