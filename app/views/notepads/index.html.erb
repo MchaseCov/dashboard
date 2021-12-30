@@ -1,0 +1,10 @@
+<%= turbo_frame_tag id="notepads" do %>
+  <%= turbo_frame_tag id="new_notepad_form" do %>
+    <%= link_to "New notepad", new_notepad_path, class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
+  <% end %>
+  <div id="notepads">
+    <% @notepads.each do |notepad| %>
+      <%= link_to notepad.title, notepad, class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %> <br>
+    <% end %>
+  </div>
+<% end %>

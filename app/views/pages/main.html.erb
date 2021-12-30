@@ -1,17 +1,18 @@
 <main class="w-[80%] mx-auto mt-12 px-5 flex flex-col gap-8 font-open-sans">
-  <section class="flex w-full justify-between">
+  <section class="flex w-full justify-between gap-x-2">
     <div>
       <div class="flex justify-between w-full">
         <h2 class="font-medium text-xl font-jetbrains w-max">VM terminal:</h2>
-        <%= link_to  "From Host", terminal_local_to_vm_path, 'data-turbo-frame': 'bash-terminal' %>
-        <%= link_to  "From Local", terminal_local_to_local_path, 'data-turbo-frame': 'bash-terminal'  %>
-        <%= link_to  "From Remote", terminal_remote_to_local_path, 'data-turbo-frame': 'bash-terminal' %>
-        <%= link_to "Bash Cheat Sheet", 'https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh', class:"text-center underline decoration-cyan-400 decoration-2 inline", target:"_blank"%>
+        <%= link_to  "From Host", terminal_local_to_vm_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
+        <%= link_to  "From Local", terminal_local_to_local_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline"  %>
+        <%= link_to  "From Remote", terminal_remote_to_local_path, 'data-turbo-frame': 'bash-terminal', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
+        <%= link_to "Bash Cheat Sheet", 'https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh', class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline mr-1", target:"_blank"%>
       </div>
       <%= turbo_frame_tag id="bash-terminal", src: terminal_local_to_vm_path %>
     </div>
-    <div>
-      <h2 class="font-medium text-xl font-jetbrains">Calandar or Gmail or something:</h2>
+    <div class="grow">
+      <h2 class="font-medium text-xl font-jetbrains">Working notes:</h2>
+      <%= turbo_frame_tag id="notepads", src: notepads_path %>
     </div>
   </section>
   <hr>

@@ -1,0 +1,26 @@
+<div>
+  <%= form_with model: notepad, data: { controller: "notepads", action: "turbo:submit-end->notepads#reset" },
+  class:"flex flex-col w-full h-full gap-y-3" do |form| %>
+    <% if notepad.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(notepad.errors.count, "error") %> prohibited this notepad from being saved:</h2>
+        <ul>
+          <% notepad.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div>
+      <%= form.label :title, style: "display: block" %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :body, style: "display: block" %>
+      <%= form.text_area :body, class:"resize-none w-[75%] h-[200px]" %>
+    </div>
+    <div>
+      <%= form.submit class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,13 @@
+<%= turbo_frame_tag notepad do %>
+  <div class="flex flex-col w-full h-full gap-y-3">
+    <strong><%= notepad.title %></strong>
+    <p>
+      <%= notepad.body %>
+    </p>
+    <div class="flex w-full">
+      <%= link_to "Edit this notepad", edit_notepad_path(notepad), class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %> |
+      <%= button_to "Destroy this notepad", notepad, method: :delete, class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline" %> |
+      <%= link_to  "See all notepads", notepads_path, data: { turbo_frame: "notepads" }, class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline"%>
+    </div>
+  </div>
+<% end %>

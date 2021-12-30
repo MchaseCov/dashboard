@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :notepads
   root 'pages#main'
   get 'pages/main'
   resources :notes, only: %i[index new create destroy]

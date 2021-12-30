@@ -1,0 +1,7 @@
+<%= turbo_frame_tag @notepad do %>
+  <div class="flex flex-col w-full h-full gap-y-3">
+    <%= render "form", notepad: @notepad %>
+    <br>
+    <%= button_to "Destroy this notepad", @notepad, method: :delete, class:"text-center underline decoration-cyan-400 hover:decoration-orange-400 decoration-2 inline"%>
+  </div>
+<% end %>
